@@ -118,6 +118,18 @@
 			referenceCode: 'ABCDEFGH'
 		});
 	</script>
+	<script>
+        const maesh = Maesh();
+        const maeshStatus = maesh.callback();
+        maeshStatus.then(status => {
+            console.log(status);
+            if (status === 'Error' || status === 'Unpaid') {
+                document.getElementById('success').style.display = 'none';
+            } else {
+                document.getElementById('error').style.display = 'none';
+            }
+        })
+    </script>
 </body>
 
 </html>
